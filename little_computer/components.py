@@ -37,6 +37,7 @@ class Memory:
 
     def __init__(self, size=100):
         """Initialise memory."""
+        self.size = size
         self.values = []
 
         for n in range(size):
@@ -44,8 +45,12 @@ class Memory:
 
     def get(self, address):
         """Get value from memory."""
+        if address >= self.size:
+            raise KeyError("Attempted to read memory location "+str(address)+" in memory of size "+self.size)
         return self.values[address].get()
 
     def set(self, address, value):
         """Set value in memory."""
+        if address >= self.size:
+            raise KeyError("Attempted to write memory location "+str(address)+" in memory of size "+self.size)
         self.values[address].set(value)
