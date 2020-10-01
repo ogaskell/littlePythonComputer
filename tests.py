@@ -52,6 +52,9 @@ class TestComponents(unittest.TestCase):
         with self.assertRaises(KeyError):
             a.set(10, 5)
 
+        with self.assertRaises(KeyError):
+            a.set(-1, 5)
+
 
 if __name__ == "__main__":
     unittest.main()
