@@ -14,7 +14,11 @@ class Register:
 
     def set(self, value):
         """Set value stored in register."""
-        self.value = value
+        if type(value) == int:
+            self.value = value
+        else:
+            raise ValueError("Only integers can be stored in registers. " + str(value) + " is of type " +
+                             type(value).__name__)
 
 
 class MemoryLocation:
@@ -30,7 +34,10 @@ class MemoryLocation:
 
     def set(self, value):
         """Set value in memory location."""
-        self.value = value
+        if type(value) == int:
+            self.value = value
+        else:
+            raise ValueError("Only integers can be stored in memory. "+str(value)+" is of type "+type(value).__name__)
 
 
 class Memory:

@@ -22,6 +22,9 @@ class TestComponents(unittest.TestCase):
         self.assertEqual(a.get(), 6)
         self.assertEqual(b.get(), 2)
 
+        with self.assertRaises(ValueError):
+            a.set("This is a String")
+
     def test_MemoryLocation(self):
         """Test MemoryLocation class."""
         a = MemoryLocation()
@@ -36,6 +39,9 @@ class TestComponents(unittest.TestCase):
         b.set(5)
 
         self.assertEqual(b.get(), 5)
+
+        with self.assertRaises(ValueError):
+            a.set("This is a String")
 
     def test_Memory(self):
         """Test Memory class."""
