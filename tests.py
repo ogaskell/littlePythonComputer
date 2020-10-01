@@ -30,9 +30,12 @@ class TestComponents(unittest.TestCase):
         a.set(13)
         b.set(256)
 
-        a.assertEqual(13)
-        b.assertEqual(256)
+        self.assertEqual(a.get(), 13)
+        self.assertEqual(b.get(), 256)
 
         b.set(5)
 
-        b.assertEqual(5)
+        self.assertEqual(b.get(), 5)
+
+if __name__ == "__main__":
+    unittest.main()
