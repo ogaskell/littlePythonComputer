@@ -47,11 +47,11 @@ class Memory:
     def get(self, address):
         """Get value from memory."""
         if address >= self.size:
-            raise KeyError("Attempted to read memory location "+str(address)+" in memory of size "+self.size)
+            raise KeyError("Attempted to read memory location "+str(address)+" in memory of size "+str(self.size))
         return self.values[address].get()
 
     def set(self, address, value):
         """Set value in memory."""
         if address >= self.size:
-            raise KeyError("Attempted to write memory location "+str(address)+" in memory of size "+self.size)
+            raise KeyError("Attempted to write memory location "+str(address)+" in memory of size "+str(self.size))
         self.values[address].set(value)
