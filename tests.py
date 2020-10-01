@@ -1,7 +1,7 @@
 """Test cases for little_computer."""
 
 import unittest
-from little_computer.components import Register, MemoryLocation
+from little_computer.components import Register, MemoryLocation, Memory
 
 
 class TestComponents(unittest.TestCase):
@@ -36,6 +36,17 @@ class TestComponents(unittest.TestCase):
         b.set(5)
 
         self.assertEqual(b.get(), 5)
+
+    def test_Memory(self):
+        """Test Memory class."""
+        a = Memory(10)
+
+        a.set(5, 10)
+        a.set(7, 45)
+        a.set(3, 578)
+
+        self.assertEqual(a.get(5), 10)
+
 
 if __name__ == "__main__":
     unittest.main()
