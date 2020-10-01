@@ -31,3 +31,21 @@ class MemoryLocation:
     def set(self, value):
         """Set value in memory location."""
 
+
+class Memory:
+    """A Memory Bank."""
+
+    def __init__(self, size=100):
+        """Initialise memory."""
+        self.values = []
+
+        for n in range(size):
+            self.values.append(MemoryLocation())
+
+    def get(self, address):
+        """Get value from memory."""
+        return self.values[address].get()
+
+    def set(self, address, value):
+        """Set value in memory."""
+        self.values[address].set(value)
