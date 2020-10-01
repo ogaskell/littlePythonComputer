@@ -46,6 +46,11 @@ class TestComponents(unittest.TestCase):
         a.set(3, 578)
 
         self.assertEqual(a.get(5), 10)
+        self.assertEqual(a.get(7), 45)
+        self.assertEqual(a.get(3), 578)
+
+        with self.assertRaises(KeyError):
+            a.set(10, 5)
 
 
 if __name__ == "__main__":
