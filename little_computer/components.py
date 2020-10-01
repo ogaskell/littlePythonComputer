@@ -30,6 +30,7 @@ class MemoryLocation:
 
     def set(self, value):
         """Set value in memory location."""
+        self.value = value
 
 
 class Memory:
