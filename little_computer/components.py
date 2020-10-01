@@ -15,3 +15,19 @@ class Register:
     def set(self, value):
         """Set value stored in register."""
         self.value = value
+
+
+class MemoryLocation:
+    """A single location in memory."""
+
+    def __init__(self):
+        """Initialise class."""
+        self.value = 0
+
+    def get(self):
+        """Get value in memory location."""
+        return self.value
+
+    def set(self, value):
+        """Set value in memory location."""
+
